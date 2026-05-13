@@ -1,0 +1,49 @@
+package com.ra5.projecte3.dto;
+
+import java.time.LocalDateTime;
+
+import com.ra5.projecte3.model.Role;
+
+public class UserResponseDTO {
+
+    private String id;
+    private String email;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private Role role;
+    private LocalDateTime dataCreated;
+
+    public UserResponseDTO() {}
+
+    public UserResponseDTO(String id, String email, String username, String firstName, String lastName, Role role, LocalDateTime dataCreated) {
+        this.id = id;
+        this.email = email;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+        this.dataCreated = dataCreated;
+    }
+
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public Role getRole() { return role; }
+    public void setRole(Role role) { this.role = role; }
+
+    public LocalDateTime getDataCreated() { return dataCreated; }
+    public void setDataCreated(LocalDateTime dataCreated) { this.dataCreated = dataCreated; }
+}
