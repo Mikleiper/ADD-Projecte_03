@@ -2,10 +2,12 @@ package com.ra5.projecte3.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.ra5.projecte3.dto.UserResponseDTO;
+import com.ra5.projecte3.mapper.UserMapper;
 import com.ra5.projecte3.model.Role;
 import com.ra5.projecte3.repository.UserRepository;
 
@@ -19,28 +21,19 @@ public class UserService {
     }
 
     public List<UserResponseDTO> findAll() {
-        return userRepository.findAll().stream()
-                .map(u -> new UserResponseDTO(u.getId(), u.getEmail(), u.getUsername(),
-                        u.getFirstName(), u.getLastName(), u.getRole(), u.getDataCreated()))
-                .toList();
+        return userRepository.findAll().stream().map(UserMapper::toDto).collect(Collectors.toList());
     }
 
-    public Optional<UserResponseDTO> findById(String id) {
-        return userRepository.findById(id)
-                .map(u -> new UserResponseDTO(u.getId(), u.getEmail(), u.getUsername(),
-                        u.getFirstName(), u.getLastName(), u.getRole(), u.getDataCreated()));
+    public UserResponseDTO findById(String id) {
+        return userRepository.findById(id).map(UserMapper::toDto).orElse(null);
     }
 
     public List<UserResponseDTO> findByRole(Role role) {
-        return userRepository.findByRole(role).stream()
-                .map(u -> new UserResponseDTO(u.getId(), u.getEmail(), u.getUsername(),
-                        u.getFirstName(), u.getLastName(), u.getRole(), u.getDataCreated()))
-                .toList();
+        return userRepository.findByRole(role).stream().map(UserMapper::toDto).collect(Collectors.toList());
     }
 
-    public Optional<UserResponseDTO> findByUsername(String username) {
-        return Optional.ofNullable(userRepository.findByUsername(username))
-                .map(u -> new UserResponseDTO(u.getId(), u.getEmail(), u.getUsername(),
-                        u.getFirstName(), u.getLastName(), u.getRole(), u.getDataCreated()));
+    public UserResponseDTO findByUsername(String username) {
+        return userRepository.findByUsername(username).map(UserMapper::toDto).orElse(null);
     }
+
 }
