@@ -7,6 +7,11 @@ public class AcademicProfile {
     private String observations;
     private String status;       // "ACTIVE" / "INACTIVE"
 
+    
+
+    public AcademicProfile() {
+    }
+
     public AcademicProfile(String course, String grade, String observations, String status) {
         this.course = course;
         this.grade = grade;

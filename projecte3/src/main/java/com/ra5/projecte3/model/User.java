@@ -26,6 +26,8 @@ public class User {
     @CreatedDate
     private LocalDateTime dataCreated;
 
+    private AcademicProfile academicProfile;
+
     public User() {
 
     }
@@ -102,5 +104,15 @@ public class User {
     public void setDataCreated(LocalDateTime dataCreated) {
         this.dataCreated = dataCreated;
     }
+
+    public AcademicProfile getAcademicProfile() {
+        return academicProfile;
+    }
+
+    public void setAcademicProfile(AcademicProfile academicProfile) {
+        this.academicProfile = academicProfile;
+    }
+
+    
 
 }

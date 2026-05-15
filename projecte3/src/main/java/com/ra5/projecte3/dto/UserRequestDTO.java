@@ -9,6 +9,9 @@ public class UserRequestDTO {
     private String username;
     private String password;
     private Role role;
+    private String grade;
+    private String course;
+    private String observations;
     public UserRequestDTO() {
     }
     public UserRequestDTO(String firstName, String lastName, String email, String username, String password,
@@ -56,6 +59,26 @@ public class UserRequestDTO {
     public void setRole(Role role) {
         this.role = role;
     }
+    public String getGrade() {
+        return grade;
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+    public String getCourse() {
+        return course;
+    }
+    public void setCourse(String course) {
+        this.course = course;
+    }
+    public String getObservations() {
+        return observations;
+    }
+    public void setObservations(String observations) {
+        this.observations = observations;
+    }
+
+    
 
     
 }
