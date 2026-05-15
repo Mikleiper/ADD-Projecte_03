@@ -1,6 +1,7 @@
 package com.ra5.projecte3.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -11,7 +12,7 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     List<User> findByRole(Role role);
 
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
-    User findByEmail(String email);
+    Optional<User> findByEmail(String email);
 }

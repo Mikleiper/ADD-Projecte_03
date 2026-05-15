@@ -13,6 +13,7 @@ public class UserResponseDTO {
     private String lastName;
     private Role role;
     private LocalDateTime dataCreated;
+    private AcademicProfileDTO academicProfile;
 
     public UserResponseDTO() {}
 
@@ -46,4 +47,13 @@ public class UserResponseDTO {
 
     public LocalDateTime getDataCreated() { return dataCreated; }
     public void setDataCreated(LocalDateTime dataCreated) { this.dataCreated = dataCreated; }
+
+    public AcademicProfileDTO getAcademicProfile() {
+        return academicProfile;
+    }
+    public void setAcademicProfile(AcademicProfileDTO academicProfile) {
+        this.academicProfile = academicProfile;
+    }
+
+    
 }
