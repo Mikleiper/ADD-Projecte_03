@@ -1,6 +1,7 @@
 package com.ra5.projecte3.model;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -112,6 +113,7 @@ public class User {
     public void setAcademicProfile(AcademicProfile academicProfile) {
         this.academicProfile = academicProfile;
     }
+
 
     
 
